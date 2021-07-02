@@ -8,11 +8,11 @@ function NavBar() {
       <Nav>
         <Span>SkinHub</Span>
         <List>
-          <LiItem>Home</LiItem>
-          <LiItem>Productos</LiItem>
-          <LiItems>
+          <li>Home</li>
+          <li>Productos</li>
+          <li>
             <GiShoppingCart />
-          </LiItems>
+          </li>
         </List>
       </Nav>
     </NavContainer>
@@ -43,31 +43,22 @@ const Span = styled.span`
 const List = styled.ul`
   display: flex;
   align-items: center;
-`;
 
-const LiItem = styled.li`
-  margin: 0 25px;
-  list-style: none;
-  color: white;
-  font-size: 22px;
-  padding: 8px;
-  cursor: pointer;
-  &:hover {
-    background-color: #7f8c8d20;
-    border-radius: 8px;
-  }
-`;
-
-const LiItems = styled.li`
-  font-size: 32px;
-  color: white;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding: 8px;
-  &:hover {
-    background-color: #7f8c8d20;
-    border-radius: 8px;
+  li {
+    margin: 0 25px;
+    list-style: none;
+    color: white;
+    font-size: 22px;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    &:hover {
+      background-color: #7f8c8d20;
+      border-radius: 8px;
+    }
+    &:last-child {
+      font-size: 32px;
+    }
   }
 `;
