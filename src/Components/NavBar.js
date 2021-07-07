@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { GiShoppingCart } from "react-icons/gi";
+import CartWidget from "./CartWidget";
 
 function NavBar() {
   return (
@@ -11,7 +11,7 @@ function NavBar() {
           <li>Home</li>
           <li>Productos</li>
           <li>
-            <GiShoppingCart />
+            <CartWidget />
           </li>
         </List>
       </Nav>
@@ -32,6 +32,7 @@ const Nav = styled.div`
   max-width: 1200px;
   align-items: center;
   height: 70px;
+  padding: 0 40px;
 `;
 
 const Span = styled.span`
