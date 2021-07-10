@@ -1,4 +1,5 @@
 import React from "react";
+import ItemCount from "./Components/ItemCount";
 import ItemListContainer from "./Components/ItemListContainer";
 import NavBar from "./Components/NavBar";
 
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <NavBar />
       <ItemListContainer message={"Bienvenidos"} />
+      <ItemCount />
     </div>
   );
 }
