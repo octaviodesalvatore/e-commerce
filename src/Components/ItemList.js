@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item";
 import styled from "styled-components";
-
 import LinearProgress from "@material-ui/core/LinearProgress";
 
 function ItemList() {
@@ -46,6 +45,7 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 `;
 
 const LinearLoading = styled(LinearProgress)`

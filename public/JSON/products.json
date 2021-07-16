@@ -4,13 +4,15 @@
     "name": "Karambit Lore",
     "image": "https://images-na.ssl-images-amazon.com/images/I/71VGEbWs2oL._AC_SX425_.jpg",
     "price": "5000 USD",
-    "stock": 7
+    "stock": 11,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
   },
   {
     "id": "2",
     "name": "AWP Dragon Lore",
     "image": "https://netrinoimages.s3.eu-west-2.amazonaws.com/2020/11/29/778491/325456/awp_dragon_lore_3d_model_c4d_max_obj_fbx_ma_lwo_3ds_3dm_stl_3408897_o.png",
     "price": "25000 USD",
-    "stock": 4
+    "stock": 4,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
   }
 ]
