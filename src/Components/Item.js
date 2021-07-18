@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 function Item(props) {
   return (
@@ -10,18 +11,22 @@ function Item(props) {
       <CardDiv>
         <StyledDiv>
           <h3>{props.name}</h3>
-          <img
-            src={props.img}
-            width="300"
-            height="200"
-            alt="Product Karambit"
-          />
+
+          <img src={props.img} width="300" height="200" alt={props.name} />
+
           <p>
             <b>Precio: </b>
             {props.price}
           </p>
-          <ItemCount stock={props.stock} />
-          <Button variant="contained">Agregar al Carrito</Button>
+
+          {/* <ItemCount stock={props.stock} /> */}
+          <ButtonDiv>
+            <Link to={`/productos/item/${props.id}`}>
+              <Button variant="contained">Ver producto</Button>
+            </Link>
+
+            <Button variant="contained">Agregar al Carrito</Button>
+          </ButtonDiv>
         </StyledDiv>
       </CardDiv>
     </div>
@@ -44,14 +49,31 @@ const CardDiv = styled(Card)`
 
 const StyledDiv = styled.div`
   h3 {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
   img {
     object-fit: contain;
   }
+`;
 
-  Button:nth-child(5) {
+const ButtonDiv = styled.div`
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  Button:nth-child(1) {
+    margin-top: 15px;
+    background: #923123;
+    color: white;
+  }
+
+  Button:nth-child(2) {
     margin-top: 15px;
     background-color: #2968c8;
     color: white;

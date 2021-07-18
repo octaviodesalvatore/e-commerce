@@ -31,6 +31,7 @@ function ItemList() {
               key={element.id}
               price={element.price}
               stock={element.stock}
+              id={element.id}
             />
           );
         })
