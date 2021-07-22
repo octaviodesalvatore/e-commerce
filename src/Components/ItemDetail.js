@@ -66,10 +66,14 @@ const StyledDiv = styled.div`
     border-right: 1px solid #999;
   }
 
+  p {
+    margin: 20px 0;
+  }
+
   Button:nth-child(2) {
     margin-top: 15px;
-    background-color: #2968c8;
-    color: white;
+    background-color: #000000;
+    color: #ffffff;
   }
 `;
 

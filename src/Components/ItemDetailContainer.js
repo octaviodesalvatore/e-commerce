@@ -5,6 +5,7 @@ import ItemDetail from "./ItemDetail";
 function ItemDetailContainer() {
   const [item, setItem] = useState();
   let { productID } = useParams();
+
   useEffect(() => {
     const getItems = async () => {
       const items = await fetch("/JSON/products.json");
@@ -17,6 +18,7 @@ function ItemDetailContainer() {
         }
       });
     };
+
     setTimeout(() => {
       getItems();
     }, 500);

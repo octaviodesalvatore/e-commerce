@@ -1,42 +1,49 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item";
 import styled from "styled-components";
-import LinearProgress from "@material-ui/core/LinearProgress";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import AsideMenu from "./AsideMenu";
 
 function ItemList() {
   const [prod, setProd] = useState();
+
   useEffect(() => {
     const obtenerProductos = async () => {
       let productos = await fetch("../JSON/products.json");
       let respuesta = await productos.json();
-      // console.log(respuesta);
       setProd(respuesta);
-      //   console.log("Hola", respuesta);
     };
+
     setTimeout(() => {
       obtenerProductos();
     }, 2000);
-    // console.log(prod);
   }, []);
   return (
-    <StyledDiv>
-      {prod === undefined ? (
-        <LinearLoading color="primary" />
-      ) : (
-        prod.map((element) => {
-          return (
-            <Item
-              name={element.name}
-              img={element.image}
-              key={element.id}
-              price={element.price}
-              stock={element.stock}
-              id={element.id}
-            />
-          );
-        })
-      )}
-    </StyledDiv>
+    <div>
+      <StyledDiv>
+        {prod === undefined ? (
+          <CircularLoading style={{ color: "#000000" }} />
+        ) : (
+          <>
+            <AsideMenu />
+            <StyledMap>
+              {prod.map((element) => {
+                return (
+                  <Item
+                    name={element.name}
+                    img={element.image}
+                    key={element.id}
+                    price={element.price}
+                    stock={element.stock}
+                    id={element.id}
+                  />
+                );
+              })}
+            </StyledMap>
+          </>
+        )}
+      </StyledDiv>
+    </div>
   );
 }
 
@@ -46,10 +53,16 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
 `;
 
-const LinearLoading = styled(LinearProgress)`
-  height: 70px;
-  width: 800px;
+const StyledMap = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+`;
+
+const CircularLoading = styled(CircularProgress)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
 `;

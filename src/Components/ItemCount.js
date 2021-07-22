@@ -48,17 +48,17 @@ const StyledDiv = styled.div`
   align-items: center;
 
   p {
-    padding: 0 15px;
+    padding: 15px 15px;
   }
 
   Button {
-    color: white;
-    background: #923123;
+    background-color: #504e4e;
+    color: #ffffff;
     color: "white";
     font-size: 18px;
   }
   Button:nth-child(1) {
-    background-color: white;
-    color: black;
+    background-color: #ffffff;
+    color: #000000;
   }
 `;
