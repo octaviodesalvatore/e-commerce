@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "@material-ui/core/Button";
 import styled from "styled-components";
 
-function ItemCount(props) {
-  const [valor, setValor] = useState(1);
+function ItemCount({ valor, stock, setValor }) {
+  // const [valor, setValor] = useState(0);
 
   return (
     <div>
       <p>
         <b>Stock disponible: </b>
-        {props.stock}
+        {stock}
       </p>
       <StyledDiv>
         <Button
@@ -28,7 +28,7 @@ function ItemCount(props) {
           size="small"
           variant="contained"
           onClick={() => {
-            if (valor < props.stock) {
+            if (valor < stock) {
               setValor(valor + 1);
             }
           }}

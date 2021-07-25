@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
+
+// const [mostrar, setMostrar] = useState();
 
 function ItemDetail(props) {
+  const [valor, setValor] = useState(0);
   return (
     <div>
       <CardDiv>
@@ -26,10 +30,20 @@ function ItemDetail(props) {
 
             <p>{props.description}</p>
           </CenterDiv>
-          <div>
-            <ItemCount stock={props.stock} />
-            <Button variant="contained">Agregar al Carrito</Button>
-          </div>
+          <StyledRightSide>
+            <ItemCount stock={props.stock} valor={valor} setValor={setValor} />
+
+            {valor === 0 ? (
+              <></>
+            ) : (
+              <>
+                <Button variant="contained">Agregar al Carrito</Button>
+                <Link to="/cart">
+                  <ButtonCompra>Terminar Compra</ButtonCompra>
+                </Link>
+              </>
+            )}
+          </StyledRightSide>
         </StyledDiv>
       </CardDiv>
     </div>
@@ -37,6 +51,13 @@ function ItemDetail(props) {
 }
 
 export default ItemDetail;
+
+const StyledRightSide = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const CardDiv = styled(Card)`
   text-align: center;
@@ -75,8 +96,36 @@ const StyledDiv = styled.div`
     background-color: #000000;
     color: #ffffff;
   }
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 const CenterDiv = styled.div`
   width: 500px;
+`;
+
+const ButtonCompra = styled.button`
+  display: block;
+  margin-top: 15px;
+  color: #ffffff;
+  background-color: #666666;
+  border: none;
+  text-align: center;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  cursor: pointer;
+
+  &:hover {
+    transition: all 250ms ease-in-out;
+    -webkit-box-shadow: 2px 6px 8px 0px rgba(0, 0, 0, 0.36);
+    box-shadow: 2px 6px 8px 0px rgba(0, 0, 0, 0.36);
+  }
 `;

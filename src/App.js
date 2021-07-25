@@ -24,6 +24,7 @@ function App() {
           <Route exact path="/categoria/:categoryID">
             <Category />
           </Route>
+          <Route exatch path="/cart"></Route>
         </Switch>
         <Redirect to="/productos" />
       </BrowserRouter>
