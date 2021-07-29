@@ -29,6 +29,7 @@ function ItemDetailContainer() {
         ""
       ) : (
         <ItemDetail
+          item={item}
           key={item.id}
           name={item.name}
           price={item.price}

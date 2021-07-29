@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
+import context from "./Context";
 
 // const [mostrar, setMostrar] = useState();
 
 function ItemDetail(props) {
   const [valor, setValor] = useState(0);
+
+  const { addItem } = useContext(context);
+
+  console.log(props.item);
   return (
     <div>
       <CardDiv>
@@ -37,7 +42,14 @@ function ItemDetail(props) {
               <></>
             ) : (
               <>
-                <Button variant="contained">Agregar al Carrito</Button>
+                <Button
+                  variant="contained"
+                  onClick={() => {
+                    addItem(props.item, valor);
+                  }}
+                >
+                  Agregar al Carrito
+                </Button>
                 <Link to="/cart">
                   <ButtonCompra>Terminar Compra</ButtonCompra>
                 </Link>
