@@ -67,6 +67,7 @@ const StyledDiv = styled.div`
     color: #333;
     font-weight: 600;
     font-size: 16px;
+    margin-bottom: 4px;
   }
   ul {
     list-style: none;
@@ -74,29 +75,38 @@ const StyledDiv = styled.div`
     padding: 0;
 
     a {
-      margin: 0;
-      padding: 0;
-      display: block;
+      display: inline-block;
       text-decoration: none;
+      padding: 4px 12px;
       color: #666;
-      margin-block-start: 1em;
+      margin-top: 7px;
+      margin-bottom: 7px;
+      /* margin-block-start: 1em;
       margin-block-end: 1em;
       margin-inline-start: 0px;
-      margin-inline-end: 0px;
+      margin-inline-end: 0px; */
+      &:hover {
+        background-color: #7f8c8d20;
+        border-radius: 8px;
+      }
     }
 
     p {
       cursor: pointer;
+      padding: 4px 12px;
       color: #666;
       font-size: 14px;
-      margin-block-start: 1em;
+      display: inline-block;
+      margin-top: 7px;
+      margin-bottom: 7px;
+      /* margin-block-start: 1em;
       margin-block-end: 1em;
       margin-inline-start: 0px;
-      margin-inline-end: 0px;
+      margin-inline-end: 0px; */
 
       &:hover {
-        /* border-bottom: 1px solid grey; */
-        /* display: inline; */
+        background-color: #7f8c8d20;
+        border-radius: 8px;
       }
     }
   }

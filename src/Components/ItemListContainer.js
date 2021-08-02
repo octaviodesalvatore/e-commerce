@@ -18,6 +18,10 @@ export default ItemListContainer;
 const DivContainer = styled.div`
   margin: 0 auto;
   max-width: 1200px;
+
+  @media (max-width: 1326px) {
+    max-width: 600px;
+  }
 `;
 
 const Title = styled.h1`
@@ -29,4 +33,5 @@ const Title = styled.h1`
 
 const StyledDiv = styled.div`
   display: flex;
+  margin-bottom: 50px;
 `;

@@ -30,8 +30,8 @@ function App() {
             <Route exatch path="/cart">
               <Cart />
             </Route>
+            <Redirect to="/productos" />
           </Switch>
-          <Redirect to="/productos" />
         </BrowserRouter>
       </CustomProvider>
     </div>

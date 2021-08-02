@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
-// import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
+import context from "./Context";
 
 function Item(props) {
+  const { addItem } = useContext(context);
   return (
     <CardDiv>
       <StyledDiv>
@@ -23,7 +24,14 @@ function Item(props) {
           <Link to={`/productos/item/${props.id}`}>
             <Button variant="contained">Ver producto</Button>
           </Link>
-          <Button variant="contained">Agregar al Carrito</Button>
+          <Button
+            variant="contained"
+            onClick={() => {
+              addItem(props.item, 1);
+            }}
+          >
+            Agregar al Carrito
+          </Button>
         </ButtonDiv>
       </StyledDiv>
     </CardDiv>
@@ -75,5 +83,15 @@ const ButtonDiv = styled.div`
     margin-top: 15px;
     background-color: #000000;
     color: #ffffff;
+  }
+
+  @media (max-width: 1326px) {
+    Button:nth-child(1) {
+      padding: 4px 14px;
+    }
+
+    Button:nth-child(2) {
+      padding: 4px 14px;
+    }
   }
 `;

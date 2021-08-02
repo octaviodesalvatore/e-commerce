@@ -56,6 +56,7 @@ function Category() {
                     price={element.price}
                     stock={element.stock}
                     id={element.id}
+                    item={element}
                   />
                 );
               })}
@@ -86,6 +87,10 @@ const CircularLoading = styled(CircularProgress)`
 const Stylediv = styled.div`
   margin: 0 auto;
   max-width: 1200px;
+
+  @media (max-width: 1326px) {
+    max-width: 600px;
+  }
 `;
 
 const DivContainer = styled.div`
@@ -96,7 +101,6 @@ const DivContainer = styled.div`
 const DivMap = styled.div`
   display: flex;
   flex-wrap: wrap;
-  min-width: 1200px;
 
   align-items: flex-start;
 `;

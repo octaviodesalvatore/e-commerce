@@ -13,7 +13,7 @@ function ItemDetail(props) {
 
   const { addItem } = useContext(context);
 
-  console.log(props.item);
+  // console.log(props.item);
   return (
     <div>
       <CardDiv>
@@ -46,6 +46,7 @@ function ItemDetail(props) {
                   variant="contained"
                   onClick={() => {
                     addItem(props.item, valor);
+                    setValor(0);
                   }}
                 >
                   Agregar al Carrito
@@ -134,9 +135,9 @@ const ButtonCompra = styled.button`
   text-transform: uppercase;
   padding: 6px 16px;
   cursor: pointer;
+  transition: all 250ms ease-in-out;
 
   &:hover {
-    transition: all 250ms ease-in-out;
     -webkit-box-shadow: 2px 6px 8px 0px rgba(0, 0, 0, 0.36);
     box-shadow: 2px 6px 8px 0px rgba(0, 0, 0, 0.36);
   }

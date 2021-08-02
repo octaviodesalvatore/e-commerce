@@ -36,6 +36,7 @@ function ItemList() {
                     price={element.price}
                     stock={element.stock}
                     id={element.id}
+                    item={element}
                   />
                 );
               })}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Provider } from "./Context";
 
 const CustomProvider = ({ children }) => {
@@ -6,7 +6,23 @@ const CustomProvider = ({ children }) => {
 
   const [cartItems, setCartItems] = useState([]);
 
+  const [totalPrice, setTotalPrice] = useState(0);
+
   // const updateCartCount = (qty) => {};
+
+  useEffect(() => {
+    const getTotalPrice = () => {
+      let total = cartItems.reduce((accumulator, current) => {
+        return current.item.price * current.qty + accumulator;
+      }, 0);
+      setTotalPrice(total);
+    };
+    getTotalPrice();
+  }, [cartItems]);
+
+  // useEffect(() => {
+  //   setTotalPrice(totalPrice + item.item.price * item.qty);
+  // }, [cartItems]);
 
   const cleanCart = () => {
     setCartCount(0);
@@ -47,6 +63,7 @@ const CustomProvider = ({ children }) => {
         addItem,
         cleanCart,
         removeItem,
+        totalPrice,
       }}
     >
       {children}

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import CartWidget from "./CartWidget";
 import context from "./Context";
+import User from "./User";
 
 import { Link } from "react-router-dom";
 
@@ -17,7 +18,9 @@ function NavBar() {
           <li>
             <Link to="/productos">Productos</Link>
           </li>
-
+          <li>
+            <User />
+          </li>
           <li>
             <Link to="/cart">
               <CartWidget /> {cartCount > 0 ? cartCount : <></>}
