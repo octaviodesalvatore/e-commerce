@@ -13,7 +13,6 @@ function ItemDetail(props) {
 
   const { addItem } = useContext(context);
 
-  // console.log(props.item);
   return (
     <div>
       <CardDiv>

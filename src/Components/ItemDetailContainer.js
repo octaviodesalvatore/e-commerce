@@ -1,32 +1,35 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
+import { getFirestore } from "../firebase";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import styled from "styled-components";
 
 function ItemDetailContainer() {
   const [item, setItem] = useState();
+
   let { productID } = useParams();
 
   useEffect(() => {
-    const getItems = async () => {
-      const items = await fetch("/JSON/products.json");
-      const respuesta = await items.json();
+    const getCategory = async () => {
+      const firestore = getFirestore();
+      const collection = await firestore.collection("productos");
+      let query = await collection.get();
 
-      respuesta.forEach((element) => {
-        if (element.id === productID) {
-          setItem(element);
-          return;
+      query.forEach((element) => {
+        if (element.data().id === productID) {
+          setItem(element.data());
         }
       });
     };
 
-    setTimeout(() => {
-      getItems();
-    }, 500);
+    getCategory();
   }, [productID]);
+
   return (
     <div>
       {item === undefined ? (
-        ""
+        <CircularLoading style={{ color: "#000000" }} />
       ) : (
         <ItemDetail
           item={item}
@@ -43,3 +46,9 @@ function ItemDetailContainer() {
 }
 
 export default ItemDetailContainer;
+
+const CircularLoading = styled(CircularProgress)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+`;

@@ -1,33 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Item from "./Item";
 import styled from "styled-components";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import AsideMenu from "./AsideMenu";
 
-function ItemList() {
-  const [prod, setProd] = useState();
-
-  useEffect(() => {
-    const obtenerProductos = async () => {
-      let productos = await fetch("../JSON/products.json");
-      let respuesta = await productos.json();
-      setProd(respuesta);
-    };
-
-    setTimeout(() => {
-      obtenerProductos();
-    }, 2000);
-  }, []);
+function ItemList({ producto }) {
   return (
     <div>
       <StyledDiv>
-        {prod === undefined ? (
+        {producto === undefined ? (
           <CircularLoading style={{ color: "#000000" }} />
         ) : (
           <>
             <AsideMenu />
             <StyledMap>
-              {prod.map((element) => {
+              {producto.map((element) => {
                 return (
                   <Item
                     name={element.name}

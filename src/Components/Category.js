@@ -5,41 +5,35 @@ import Item from "./Item";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import styled from "styled-components";
 import AsideMenu from "./AsideMenu";
+import { getFirestore } from "../firebase";
 
 function Category() {
-  const [itemsCategory, setItemsCategory] = useState();
+  const [itemsCategory, setItemsCategory] = useState([]);
   const { categoryID } = useParams();
+
   //   console.log(categoryID);
 
   useEffect(() => {
-    const obtenerCategoria = async () => {
-      let categoria = await fetch("../JSON/products.json");
-      let respuesta = await categoria.json();
+    const getCategory = async () => {
+      const firestore = getFirestore();
+      const collection = await firestore.collection("productos");
+      let query = await collection.get();
 
-      let arrayFiltrado = respuesta.filter(
-        (product) => product.category === categoryID
-      );
-      setItemsCategory(arrayFiltrado);
-
-      // let newArray = [];
-      // respuesta.forEach((element) => {
-      //   if (element.category === categoryID) {
-      //     newArray = [...newArray, element];
-      //   }
-      //   setItemsCategory(newArray);
-      // }
-      // );
-
-      // };
+      let newArray = [];
+      query.forEach((element) => {
+        if (element.data().category === categoryID) {
+          newArray.push(element.data());
+        }
+      });
+      setItemsCategory(newArray);
     };
 
-    obtenerCategoria();
-    // console.log(itemsCategory);
+    getCategory();
   }, [categoryID]);
 
   return (
     <Stylediv>
-      {itemsCategory === undefined ? (
+      {itemsCategory.length === 0 ? (
         <CircularLoading color="primary" />
       ) : (
         <>
