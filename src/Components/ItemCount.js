@@ -5,18 +5,13 @@ import context from "./Context";
 import { useParams } from "react-router-dom";
 
 function ItemCount({ valor, stock, setValor }) {
-  // const [valor, setValor] = useState(0);
   const { cartItems } = useContext(context);
   const { productID } = useParams();
-  // console.log(productID);
-  // console.log(cartItems);
 
   const getQty = () => {
     const product = cartItems.find((product) => product.item.id === productID);
     return product ? product.qty : 0;
   };
-
-  // console.log("hola", getQty());
 
   return (
     <div>

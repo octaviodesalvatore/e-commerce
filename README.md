@@ -15,3 +15,5 @@ Este proyecto es un Ecommerce de skins sobre el videojuego CS:GO realizado en re
 ### `React Router DOM`
 
 ### `Firebase`
+
+### `React Hook Form`

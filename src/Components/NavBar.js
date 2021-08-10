@@ -23,7 +23,7 @@ function NavBar() {
           </li>
           <li>
             <Link to="/cart">
-              <CartWidget /> {cartCount > 0 ? cartCount : <></>}
+              <CartWidget /> {cartCount > 0 ? <p>{cartCount}</p> : <></>}
             </Link>
           </li>
         </List>
@@ -36,8 +36,8 @@ export default NavBar;
 
 const NavContainer = styled.nav`
   background-color: #ffffff;
-  -webkit-box-shadow: 3px 8px 8px 0px rgba(0, 0, 0, 0.24);
-  box-shadow: 3px 8px 8px 0px rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.24);
+  box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.24);
 `;
 
 const Nav = styled.div`
@@ -52,6 +52,7 @@ const Nav = styled.div`
   a {
     text-decoration: none;
     color: inherit;
+    display: flex;
   }
 `;
 

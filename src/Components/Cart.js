@@ -1,17 +1,30 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import context from "./Context";
 import styled from "styled-components";
 import Card from "@material-ui/core/Card";
 import { FaTrash } from "react-icons/fa";
 import { BsArrowReturnLeft } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import Backdrop from "@material-ui/core/Backdrop";
+import Order from "./Order";
 
 function Cart() {
   const { cartItems, cleanCart, removeItem, totalPrice, cartCount } =
     useContext(context);
 
+  const [confirmacion, setConfirmacion] = useState(false);
+  const [open, setOpen] = React.useState(false);
+  const [resumen, setResumen] = useState([]);
+  const handleClose = () => {
+    setOpen(false);
+  };
+  // const handleToggle = () => {
+  //   setOpen(!open);
+  // };
+
   return (
     <DivContainer>
+      {console.log("este es el resumen por fuera", resumen)}
       {cartItems.length > 0 ? (
         <>
           <h1>Carrito</h1>
@@ -63,16 +76,78 @@ function Cart() {
             </p>
           </TotalDiv>
           <CleanButton onClick={cleanCart}>Vaciar Carrito</CleanButton>
+
+          <CleanButton
+            onClick={() => {
+              setOpen(true);
+            }}
+          >
+            <p>Continuar Compra</p>
+          </CleanButton>
+
+          <StyledBackDrop open={open}>
+            <Order
+              handleClose={handleClose}
+              setConfirmacion={setConfirmacion}
+              setResumen={setResumen}
+            />
+          </StyledBackDrop>
         </>
       ) : (
         <>
-          <h1>Su carrito se encuentra vacio</h1>
-          <Link to="/productos">
-            <ReturnButton>
-              Regresar a productos
-              <BsArrowReturnLeft />
-            </ReturnButton>
-          </Link>
+          {confirmacion ? (
+            <SuccesBuy>
+              <h1>Compra exitosa</h1>
+              <h3>Su numero de orden es: {confirmacion}</h3>
+              <p>Recuerde guardar su numero de orden</p>
+              <h2>Resumen de su compra:</h2>
+              {console.log(resumen)}
+              {resumen.length > 0 &&
+                resumen.map((item, index) => {
+                  return (
+                    <div key={index}>
+                      <CardDiv>
+                        <StyledDiv>
+                          <h3>{item.item.name}</h3>
+
+                          <img
+                            src={item.item.image}
+                            width="200"
+                            height="100"
+                            alt={item.item.name}
+                          />
+
+                          <p>
+                            <b>Precio: </b>
+                            {item.item.price} USD
+                          </p>
+                          <p>
+                            <b>Cantidad: </b>
+                            {item.qty}
+                          </p>
+                        </StyledDiv>
+                      </CardDiv>
+                    </div>
+                  );
+                })}
+              <Link to="/productos">
+                <ReturnButton>
+                  Regresar a productos
+                  <BsArrowReturnLeft />
+                </ReturnButton>
+              </Link>
+            </SuccesBuy>
+          ) : (
+            <>
+              <h1>Su carrito se encuentra vacio</h1>
+              <Link to="/productos">
+                <ReturnButton>
+                  Regresar a productos
+                  <BsArrowReturnLeft />
+                </ReturnButton>
+              </Link>
+            </>
+          )}
         </>
       )}
     </DivContainer>
@@ -81,12 +156,33 @@ function Cart() {
 
 export default Cart;
 
+const StyledBackDrop = styled(Backdrop)`
+  z-index: 999 !important;
+`;
+
+const SuccesBuy = styled.div`
+  text-align: center;
+
+  h3 {
+    font-size: 24px;
+  }
+
+  p {
+    margin-top: 10px;
+  }
+`;
+
 const DivContainer = styled.div`
   h1 {
     text-align: center;
     font-size: 48px;
     margin-top: 50px;
     margin-bottom: 50px;
+  }
+
+  h2 {
+    margin-top: 40px;
+    font-size: 38px;
   }
 `;
 

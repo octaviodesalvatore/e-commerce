@@ -3,6 +3,7 @@ import ItemListContainer from "./Components/ItemListContainer";
 import NavBar from "./Components/NavBar";
 import Home from "./Components/Home";
 import Cart from "./Components/Cart";
+import Order from "./Components/Order";
 import ItemDetailContainer from "./Components/ItemDetailContainer";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Category from "./Components/Category";
@@ -27,8 +28,11 @@ function App() {
             <Route exact path="/categoria/:categoryID">
               <Category />
             </Route>
-            <Route exatch path="/cart">
+            <Route exact path="/cart">
               <Cart />
+            </Route>
+            <Route exact path="/Order">
+              <Order />
             </Route>
             <Redirect to="/productos" />
           </Switch>

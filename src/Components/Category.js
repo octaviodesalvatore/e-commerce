@@ -11,8 +11,6 @@ function Category() {
   const [itemsCategory, setItemsCategory] = useState([]);
   const { categoryID } = useParams();
 
-  //   console.log(categoryID);
-
   useEffect(() => {
     const getCategory = async () => {
       const firestore = getFirestore();

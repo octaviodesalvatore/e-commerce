@@ -16,7 +16,7 @@ function Item(props) {
 
         <p>
           <b>Precio: </b>
-          {props.price}
+          {props.price} USD
         </p>
 
         {/* <ItemCount stock={props.stock} /> */}
