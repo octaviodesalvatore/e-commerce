@@ -6,7 +6,7 @@ import Cart from "./Components/Cart";
 import Order from "./Components/Order";
 import ItemDetailContainer from "./Components/ItemDetailContainer";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import Category from "./Components/Category";
+
 import CustomProvider from "./Components/CustomProvider";
 
 function App() {
@@ -19,14 +19,11 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/productos">
+            <Route exact path="/productos/:categoryID">
               <ItemListContainer message={"Todos nuestros productos"} />
             </Route>
             <Route exact path="/productos/item/:productID">
               <ItemDetailContainer />
-            </Route>
-            <Route exact path="/categoria/:categoryID">
-              <Category />
             </Route>
             <Route exact path="/cart">
               <Cart />

@@ -16,7 +16,7 @@ function NavBar() {
         </Link>
         <List>
           <li>
-            <Link to="/productos">Productos</Link>
+            <Link to="/productos/todo">Productos</Link>
           </li>
           <li>
             <User />

@@ -6,41 +6,28 @@ import { useParams } from "react-router";
 
 function ItemListContainer(props) {
   const [producto, setProducto] = useState([]);
-  const { productID } = useParams();
+
+  const { categoryID } = useParams();
 
   useEffect(() => {
-    const firestore = getFirestore();
-    const collection = firestore.collection("productos");
+    const getCategory = async () => {
+      const firestore = getFirestore();
+      const collection = await firestore.collection("productos");
+      let query = await collection.get();
 
-    if (!productID) {
-      const query = collection.get();
-      query
-        .then((snapshot) => {
-          const documentos = snapshot.docs;
-          const items = documentos.map((doc) => {
-            return { id: doc.id, ...doc.data() };
-          });
-          setProducto(items);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    } else {
-      let query = collection.where("categoryID", "==", productID);
-      query = query.get();
-      query
-        .then((snapshot) => {
-          const documentos = snapshot.docs;
-          const items = documentos.map((doc) => {
-            return { id: doc.id, ...doc.data() };
-          });
-          setProducto(items);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-  }, [productID]);
+      let newArray = [];
+      query.forEach((element) => {
+        if (categoryID === "todo") {
+          newArray.push(element.data());
+        } else if (element.data().category === categoryID) {
+          newArray.push(element.data());
+        }
+      });
+      setProducto(newArray);
+    };
+
+    getCategory();
+  }, [categoryID]);
 
   return (
     <DivContainer>

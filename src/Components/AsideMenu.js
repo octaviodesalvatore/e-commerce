@@ -16,16 +16,16 @@ function AsideMenu() {
             <h5>Categorías</h5>
           </li>
           <li>
-            <Link to="/categoria/knife">Cuchillos</Link>
+            <Link to="/productos/knife">Cuchillos</Link>
           </li>
           <li>
-            <Link to="/categoria/awp">AWP</Link>
+            <Link to="/productos/awp">AWP</Link>
           </li>
           <li>
-            <Link to="/categoria/rifle">Rifles</Link>
+            <Link to="/productos/rifle">Rifles</Link>
           </li>
           <li>
-            <Link to="/categoria/pistols">Pistolas</Link>
+            <Link to="/productos/pistols">Pistolas</Link>
           </li>
         </ul>
 

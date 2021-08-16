@@ -130,7 +130,7 @@ function Cart() {
                     </div>
                   );
                 })}
-              <Link to="/productos">
+              <Link to="/productos/todo">
                 <ReturnButton>
                   Regresar a productos
                   <BsArrowReturnLeft />
@@ -140,7 +140,7 @@ function Cart() {
           ) : (
             <>
               <h1>Su carrito se encuentra vacio</h1>
-              <Link to="/productos">
+              <Link to="/productos/todo">
                 <ReturnButton>
                   Regresar a productos
                   <BsArrowReturnLeft />
