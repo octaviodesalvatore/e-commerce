@@ -12,8 +12,7 @@ import MuiAlert from "@material-ui/lab/Alert";
 import Confirm from "./Confirm";
 
 function Cart() {
-  const { cartItems, cleanCart, removeItem, totalPrice, cartCount } =
-    useContext(context);
+  const { cartItems, removeItem, totalPrice, cartCount } = useContext(context);
 
   const [confirmacion, setConfirmacion] = useState(false);
   const [open, setOpen] = React.useState(false);
@@ -45,7 +44,6 @@ function Cart() {
 
   return (
     <DivContainer>
-      {console.log("este es el resumen por fuera", resumen)}
       {cartItems.length > 0 ? (
         <>
           <h1>Carrito</h1>
@@ -97,34 +95,36 @@ function Cart() {
               {cartCount}
             </p>
           </TotalDiv>
-          {/* <CleanButton onClick={cleanCart}>Vaciar Carrito</CleanButton> */}
-          <CleanButton
-            onClick={() => {
-              setOpenn(true);
-            }}
-          >
-            Vaciar Carrito
-          </CleanButton>
 
-          <StyledBackDrop open={openn}>
-            <Confirm handleClose={handleCloseConfirm} />
-          </StyledBackDrop>
+          <ButtonContainer>
+            <CleanButton
+              onClick={() => {
+                setOpenn(true);
+              }}
+            >
+              Vaciar Carrito
+            </CleanButton>
 
-          <CleanButton
-            onClick={() => {
-              setOpen(true);
-            }}
-          >
-            <p>Continuar Compra</p>
-          </CleanButton>
+            <StyledBackDrop open={openn}>
+              <Confirm handleClose={handleCloseConfirm} />
+            </StyledBackDrop>
 
-          <StyledBackDrop open={open}>
-            <Order
-              handleClose={handleClose}
-              setConfirmacion={setConfirmacion}
-              setResumen={setResumen}
-            />
-          </StyledBackDrop>
+            <CleanButton
+              onClick={() => {
+                setOpen(true);
+              }}
+            >
+              <p>Continuar Compra</p>
+            </CleanButton>
+
+            <StyledBackDrop open={open}>
+              <Order
+                handleClose={handleClose}
+                setConfirmacion={setConfirmacion}
+                setResumen={setResumen}
+              />
+            </StyledBackDrop>
+          </ButtonContainer>
         </>
       ) : (
         <>
@@ -134,7 +134,7 @@ function Cart() {
               <h3>Su numero de orden es: {confirmacion}</h3>
               <p>Recuerde guardar su numero de orden</p>
               <h2>Resumen de su compra:</h2>
-              {console.log(resumen)}
+
               {resumen.length > 0 &&
                 resumen.map((item, index) => {
                   return (
@@ -289,7 +289,6 @@ const CleanButton = styled.button`
   color: #fff;
   padding: 8px 16px;
   border-radius: 4px;
-  margin: 0 auto;
   cursor: pointer;
   display: block;
   margin-top: 50px;
@@ -338,4 +337,11 @@ const TotalDiv = styled.div`
     margin-right: 10px;
     font-size: 18px;
   }
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
 `;

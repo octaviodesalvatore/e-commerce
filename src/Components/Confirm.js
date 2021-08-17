@@ -9,7 +9,7 @@ function Confirm({ handleClose }) {
   return (
     <MainContainer>
       <SpanClose onClick={handleClose}>
-        <RiCloseCircleLine size={30} fill={"#fff"} />
+        <RiCloseCircleLine size={30} fill={"#000000"} />
       </SpanClose>
       <p>Estas seguro que quieres eliminar tu carrito</p>
       <ButtonContainer>
@@ -29,20 +29,23 @@ export default Confirm;
 const MainContainer = styled.div`
   display: flex;
   position: relative;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 400px;
-  height: 400px;
-  background-color: #201e1e;
+  height: 200px;
+  background-color: #f3f3f3;
   border-radius: 0.5rem;
   -webkit-box-shadow: 1px 6px 10px 3px rgba(0, 0, 0, 0.69);
   box-shadow: 1px 6px 10px 3px rgba(0, 0, 0, 0.69);
 
   p {
-    color: #fff;
+    color: #000000;
     font-size: 24px;
     text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    max-width: 320px;
   }
   /* Button:nth-child(1) {
     background-color: #ffffff;

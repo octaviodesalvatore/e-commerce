@@ -15,7 +15,6 @@ function Order({ handleClose, setConfirmacion, setResumen }) {
   //
   const actualDate = new Date();
   const onSubmit = (data) => {
-    // console.log(data);
     const nueva_orden = {
       buyer: {
         name: data.Name,
@@ -44,12 +43,10 @@ function Order({ handleClose, setConfirmacion, setResumen }) {
       });
   };
 
-  // console.log(errors);
-
   return (
     <MainContainer>
       <span onClick={handleClose}>
-        <RiCloseCircleLine size={30} fill={"#fff"} />
+        <RiCloseCircleLine size={30} fill={"#000"} />
       </span>
 
       <p>Ingrese sus datos para finalizar su compra</p>
@@ -100,7 +97,7 @@ const MainContainer = styled.div`
   flex-direction: column;
   width: 400px;
   height: 400px;
-  background-color: #201e1e;
+  background-color: #eeeeee;
   border-radius: 0.5rem;
   -webkit-box-shadow: 1px 6px 10px 3px rgba(0, 0, 0, 0.69);
   box-shadow: 1px 6px 10px 3px rgba(0, 0, 0, 0.69);
@@ -113,9 +110,12 @@ const MainContainer = styled.div`
   }
 
   p {
-    color: #fff;
+    color: #070707;
     margin-bottom: 20px;
-    font-size: 18px;
+    font-size: 24px;
+    text-align: center;
+    max-width: 380px;
+    line-height: 1.5;
   }
 
   form input {
@@ -124,17 +124,33 @@ const MainContainer = styled.div`
     margin-top: 10px;
     margin-bottom: 10px;
     border: none;
-    background: #fff;
+    border-radius: 6px;
+    background: #080808;
     transition: all 70ms ease-in-out;
+    color: #fff;
+    font-size: 20px;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #141414 inset !important;
+    -webkit-text-fill-color: white !important;
+    caret-color: white;
+  }
+
+  form input::placeholder {
+    color: #cccccc;
   }
   form input:focus {
     outline: none;
   }
   form input:hover {
-    background: #eeeeee;
+    background: #141414;
   }
   form input:nth-child(4) {
     cursor: pointer;
     margin: 0 auto;
+    color: #fff;
   }
 `;

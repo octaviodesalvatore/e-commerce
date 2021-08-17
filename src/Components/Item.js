@@ -6,10 +6,12 @@ import { Link } from "react-router-dom";
 import context from "./Context";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
+import { MdAddShoppingCart } from "react-icons/md";
+
 // import MuiAlert from "@material-ui/lab/Alert";
 function Item(props) {
   const { addItem } = useContext(context);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleClick = () => {
     setOpen(true);
@@ -47,7 +49,7 @@ function Item(props) {
               handleClick();
             }}
           >
-            Agregar al Carrito
+            <MdAddShoppingCart size={28} />
           </Button>
         </ButtonDiv>
         <Snackbar
@@ -106,14 +108,16 @@ const ButtonDiv = styled.div`
 
   Button:nth-child(1) {
     margin-top: 15px;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #000000;
+    color: #ffffff;
+    max-height: 40px;
   }
 
   Button:nth-child(2) {
     margin-top: 15px;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #ececec;
+    color: #111111;
+    max-height: 40px;
   }
 
   @media (max-width: 1326px) {
