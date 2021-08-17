@@ -20,7 +20,7 @@ function App() {
               <Home />
             </Route>
             <Route exact path="/productos/:categoryID">
-              <ItemListContainer message={"Todos nuestros productos"} />
+              <ItemListContainer />
             </Route>
             <Route exact path="/productos/item/:productID">
               <ItemDetailContainer />

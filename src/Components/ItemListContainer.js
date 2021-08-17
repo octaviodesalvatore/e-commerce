@@ -31,7 +31,9 @@ function ItemListContainer(props) {
 
   return (
     <DivContainer>
-      <Title>{props.message}</Title>
+      <Title>
+        {categoryID === "todo" ? "Todos nuestros productos" : categoryID}
+      </Title>
       <StyledDiv>
         <ItemList producto={producto} />
       </StyledDiv>
