@@ -1,12 +1,28 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import { Link } from "react-router-dom";
 import context from "./Context";
-
+import Snackbar from "@material-ui/core/Snackbar";
+import MuiAlert from "@material-ui/lab/Alert";
+// import MuiAlert from "@material-ui/lab/Alert";
 function Item(props) {
   const { addItem } = useContext(context);
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   return (
     <CardDiv>
       <StyledDiv>
@@ -28,11 +44,26 @@ function Item(props) {
             variant="contained"
             onClick={() => {
               addItem(props.item, 1);
+              handleClick();
             }}
           >
             Agregar al Carrito
           </Button>
         </ButtonDiv>
+        <Snackbar
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+          open={open}
+          autoHideDuration={1500}
+          onClose={handleClose}
+          // message={"Producto agregado al carrito"}
+        >
+          <MuiAlert onClose={handleClose} severity="success">
+            Producto agregado al carrito
+          </MuiAlert>
+        </Snackbar>
       </StyledDiv>
     </CardDiv>
   );

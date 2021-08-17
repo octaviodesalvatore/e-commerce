@@ -7,6 +7,9 @@ import { BsArrowReturnLeft } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Backdrop from "@material-ui/core/Backdrop";
 import Order from "./Order";
+import Snackbar from "@material-ui/core/Snackbar";
+import MuiAlert from "@material-ui/lab/Alert";
+import Confirm from "./Confirm";
 
 function Cart() {
   const { cartItems, cleanCart, removeItem, totalPrice, cartCount } =
@@ -18,9 +21,23 @@ function Cart() {
   const handleClose = () => {
     setOpen(false);
   };
-  // const handleToggle = () => {
-  //   setOpen(!open);
-  // };
+
+  //Snackbars
+
+  const [abierto, setAbierto] = React.useState(false);
+
+  const manejarClick = () => {
+    setAbierto(true);
+  };
+
+  const manejarClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setAbierto(false);
+  };
+
+  //
 
   return (
     <DivContainer>
@@ -55,6 +72,7 @@ function Cart() {
                         <button
                           onClick={() => {
                             removeItem(index);
+                            manejarClick();
                           }}
                         >
                           <FaTrash size={20} />
@@ -150,6 +168,20 @@ function Cart() {
           )}
         </>
       )}
+      <Snackbar
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        open={abierto}
+        autoHideDuration={1500}
+        onClose={manejarClose}
+        // message={"Producto agregado al carrito"}
+      >
+        <MuiAlert onClose={manejarClose} severity="error">
+          Producto eliminado del carrito
+        </MuiAlert>
+      </Snackbar>
     </DivContainer>
   );
 }
