@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { getFirestore } from "../firebase";
 import { useParams } from "react-router";
 
-function ItemListContainer(props) {
+function ItemListContainer() {
   const [producto, setProducto] = useState([]);
 
   const { categoryID } = useParams();
@@ -57,6 +57,7 @@ const Title = styled.h1`
   font-size: 48px;
   margin-top: 50px;
   margin-bottom: 50px;
+  color: ${(props) => props.theme.color};
 `;
 
 const StyledDiv = styled.div`

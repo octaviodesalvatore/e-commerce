@@ -107,6 +107,8 @@ const CardDiv = styled(Card)`
   margin: 0 auto;
   margin-top: 50px;
   max-width: 1200px;
+  background-color: ${(props) => props.theme.backgroundCard} !important;
+  color: ${(props) => props.theme.color};
 
   &:hover {
     -webkit-box-shadow: 0px 7px 15px 2px rgba(0, 0, 0, 0.44);
@@ -119,8 +121,10 @@ const StyledDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   h3 {
     margin-bottom: 20px;
+    color: ${(props) => props.theme.color};
   }
 
   img {
@@ -130,6 +134,7 @@ const StyledDiv = styled.div`
 
   p {
     margin: 20px 0;
+    color: ${(props) => props.theme.color};
   }
 
   Button:nth-child(2) {

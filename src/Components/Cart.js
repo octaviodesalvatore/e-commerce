@@ -212,10 +212,14 @@ const SuccesBuy = styled.div`
 
   h3 {
     font-size: 24px;
+    color: ${(props) => props.theme.color};
+    transition: all 0.5s ease;
   }
 
   p {
     margin-top: 10px;
+    color: ${(props) => props.theme.color};
+    transition: all 0.5s ease;
   }
 `;
 
@@ -225,22 +229,27 @@ const DivContainer = styled.div`
     font-size: 48px;
     margin-top: 50px;
     margin-bottom: 50px;
+    color: ${(props) => props.theme.color};
+    transition: all 0.5s ease;
   }
 
   h2 {
     margin-top: 40px;
     font-size: 38px;
+    color: ${(props) => props.theme.color};
+    transition: all 0.5s ease;
   }
 `;
 
 const CardDiv = styled(Card)`
-  background-color: #923333;
   text-align: center;
   margin: 10px;
   padding: 40px;
   margin: 0 auto;
   margin-top: 50px;
   max-width: 1000px;
+  background-color: ${(props) => props.theme.backgroundCard} !important;
+  transition: all 0.5s ease;
 
   &:hover {
     -webkit-box-shadow: 0px 7px 15px 2px rgba(0, 0, 0, 0.44);
@@ -260,10 +269,15 @@ const StyledDiv = styled.div`
 
   p {
     margin: 20px 0;
+    color: ${(props) => props.theme.color};
+  }
+  h3 {
+    color: ${(props) => props.theme.color};
+    transition: all 0.5s ease;
   }
 
   Button:nth-child(5) {
-    background-color: #fff;
+    background-color: transparent;
     color: #e23838;
     border: none;
     cursor: pointer;
@@ -285,8 +299,8 @@ const StyledDiv = styled.div`
 const CleanButton = styled.button`
   border: none;
   font-size: 32px;
-  background-color: #000;
-  color: #fff;
+  background-color: ${(props) => props.theme.button};
+  color: ${(props) => props.theme.buttonText};
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
@@ -304,8 +318,9 @@ const CleanButton = styled.button`
 const ReturnButton = styled.button`
   border: none;
   font-size: 32px;
-  background-color: #000;
-  color: #fff;
+  background: ${(props) => props.theme.button};
+  color: ${(props) => props.theme.buttonText};
+  transition: all 0.5s ease;
   padding: 8px 16px;
   border-radius: 4px;
   margin: 0 auto;
@@ -336,6 +351,8 @@ const TotalDiv = styled.div`
     display: inline;
     margin-right: 10px;
     font-size: 18px;
+    color: ${(props) => props.theme.button};
+    transition: all 0.5s ease;
   }
 `;
 

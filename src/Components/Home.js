@@ -17,4 +17,5 @@ export default Home;
 const StyledDiv = styled.div`
   text-align: center;
   margin-top: 50px;
+  color: ${(props) => props.theme.color};
 `;

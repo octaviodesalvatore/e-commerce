@@ -78,7 +78,8 @@ const CardDiv = styled(Card)`
   margin: 10px;
   padding: 40px;
   max-width: 500px;
-
+  background-color: ${(props) => props.theme.backgroundCard} !important;
+  transition: all 0.5s ease !important;
   &:hover {
     -webkit-box-shadow: 0px 7px 15px 2px rgba(0, 0, 0, 0.44);
     box-shadow: 0px 7px 15px 2px rgba(0, 0, 0, 0.44);
@@ -89,10 +90,16 @@ const CardDiv = styled(Card)`
 const StyledDiv = styled.div`
   h3 {
     margin-bottom: 40px;
+    color: ${(props) => props.theme.color};
+    transition: all 0.5s ease;
   }
 
   img {
     object-fit: contain;
+  }
+  p {
+    color: ${(props) => props.theme.color};
+    transition: all 0.5s ease;
   }
 `;
 

@@ -3,20 +3,27 @@ import styled from "styled-components";
 import CartWidget from "./CartWidget";
 import context from "./Context";
 import User from "./User";
+import { FaMoon } from "react-icons/fa";
+import { FiSun } from "react-icons/fi";
 
 import { Link } from "react-router-dom";
 
-function NavBar() {
+function NavBar({ themeToggler, theme }) {
   const { cartCount } = useContext(context);
   return (
     <NavContainer>
       <Nav>
         <Link to="/">
-          <Span>SkinHub</Span>
+          <SpanBrand>SkinHub</SpanBrand>
         </Link>
         <List>
           <li>
             <Link to="/productos/todo">Productos</Link>
+          </li>
+          <li>
+            <span onClick={themeToggler}>
+              {theme === "light" ? <FaMoon /> : <FiSun />}
+            </span>
           </li>
           <li>
             <User />
@@ -35,7 +42,9 @@ function NavBar() {
 export default NavBar;
 
 const NavContainer = styled.nav`
-  background-color: #ffffff;
+  background-color: ${(props) => props.theme.background};
+  transition: all 0.5s ease;
+  border-bottom: 1px solid #a8a8a8;
   -webkit-box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.24);
   box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.24);
 `;
@@ -51,12 +60,19 @@ const Nav = styled.div`
 
   a {
     text-decoration: none;
-    color: inherit;
+    color: ${(props) => props.theme.color};
+    transition: all 0.5s ease;
     display: flex;
+  }
+  span {
+    svg {
+      color: ${(props) => props.theme.svg};
+      transition: all 0.5s ease;
+    }
   }
 `;
 
-const Span = styled.span`
+const SpanBrand = styled.span`
   /* display: block; */
   font-size: 30px;
   font-family: "Noto Sans HK", sans-serif;
