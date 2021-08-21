@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { BsArrowRightShort } from "react-icons/bs";
+import { GrFormClose } from "react-icons/gr";
 
 //Para esta entrega esta solo funcionando el filtro de categorias
 // Que es lo que se pedia para la entrega, pero la idea
 // es que para la entrega final, poder hacer funcionar
 // todos los demas filtros de manera conjunta.
-function AsideMenu() {
+function AsideMenu({ changeCondition }) {
   return (
     <StyledDiv>
       <div>
@@ -42,16 +43,16 @@ function AsideMenu() {
           <h5>Condicion del Skin</h5>
         </li>
         <li>
-          <p>Recien fabricado</p>
+          <p onClick={() => changeCondition("factory new")}>Recien fabricado</p>
         </li>
         <li>
-          <p>Casi nuevo</p>
+          <p onClick={() => changeCondition("minimal wear")}>Casi nuevo</p>
         </li>
         <li>
-          <p>Algo desgastado</p>
+          <p onClick={() => changeCondition("field tested")}>Algo desgastado</p>
         </li>
         <li>
-          <p>Deplorable</p>
+          <p onClick={() => changeCondition("battle scarred")}>Deplorable</p>
         </li>
       </ul>
     </StyledDiv>

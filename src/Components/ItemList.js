@@ -4,7 +4,7 @@ import styled from "styled-components";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import AsideMenu from "./AsideMenu";
 
-function ItemList({ producto }) {
+function ItemList({ producto, changeCondition }) {
   return (
     <div>
       <StyledDiv>
@@ -12,7 +12,7 @@ function ItemList({ producto }) {
           <CircularLoading style={{ color: "#000000" }} />
         ) : (
           <>
-            <AsideMenu />
+            <AsideMenu changeCondition={changeCondition} />
             <StyledMap>
               {producto.map((element) => {
                 return (

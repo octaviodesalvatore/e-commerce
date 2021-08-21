@@ -16,13 +16,13 @@ function Cart() {
 
   const [confirmacion, setConfirmacion] = useState(false);
   const [open, setOpen] = React.useState(false);
-  const [openn, setOpenn] = React.useState(false);
+  const [open2, setOpen2] = React.useState(false);
   const [resumen, setResumen] = useState([]);
   const handleClose = () => {
     setOpen(false);
   };
   const handleCloseConfirm = () => {
-    setOpenn(false);
+    setOpen2(false);
   };
 
   //Snackbars
@@ -99,13 +99,13 @@ function Cart() {
           <ButtonContainer>
             <CleanButton
               onClick={() => {
-                setOpenn(true);
+                setOpen2(true);
               }}
             >
               Vaciar Carrito
             </CleanButton>
 
-            <StyledBackDrop open={openn}>
+            <StyledBackDrop open={open2}>
               <Confirm handleClose={handleCloseConfirm} />
             </StyledBackDrop>
 
