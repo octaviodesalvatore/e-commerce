@@ -1,23 +1,28 @@
 import { createGlobalStyle } from "styled-components";
 
 export const lightTheme = {
-  background: "#fff",
+  buttonBackground: "#18e86b",
+  background: "#efefef;",
   backgroundCard: "#fff",
   buttonText: "#fff",
   button: "#000000",
   color: "#000",
   svg: "black",
+  img: "https://www.skinwallet.com/static/sell-instantly-hero-ec633d4949e21189398f3e23b0e7a503.jpg",
 };
 export const darkTheme = {
-  background: "#000",
+  buttonBackground: "#ffd7bc",
+  background: "#0D0D0D",
   //   backgroundCard: "#282c36",
   button: "#ffffff",
   buttonText: "#000",
-  backgroundCard: "#070707",
+  backgroundCard: "#131313",
+  backgroundHome: "#000",
   // background: "#181818",
   // backgroundCard: "#373737",
   color: "#fff",
   svg: "white",
+  img: "https://www.skinwallet.com/static/sell-on-market-hero-f3f499a865d238a5e7ed1ee8437d11fe.jpg",
 };
 
 export const GlobalStytles = createGlobalStyle`
