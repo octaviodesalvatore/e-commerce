@@ -69,7 +69,7 @@ export default ItemListContainer;
 
 const DivContainer = styled.div`
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1400px;
 
   @media (max-width: 1326px) {
     max-width: 600px;

@@ -52,7 +52,7 @@ const Nav = styled.div`
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1400px;
   align-items: center;
   height: 70px;
   padding: 0 40px;
