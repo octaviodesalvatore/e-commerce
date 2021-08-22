@@ -88,6 +88,17 @@ function AsideMenu({ changeCondition }) {
         </li>
         <li>
           <p
+            className={active === "well worn" ? "active" : ""}
+            onClick={() => {
+              changeCondition("well worn");
+              toggleActive("well worn");
+            }}
+          >
+            Bastante Desgastado
+          </p>
+        </li>
+        <li>
+          <p
             className={active === "battle scarred" ? "active" : ""}
             onClick={() => {
               changeCondition("battle scarred");
@@ -125,10 +136,6 @@ const StyledDiv = styled.div`
       color: #666;
       margin-top: 7px;
       margin-bottom: 7px;
-      /* margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px; */
       &:hover {
         background-color: #7f8c8d20;
         border-radius: 8px;
@@ -143,18 +150,7 @@ const StyledDiv = styled.div`
       display: inline-block;
       margin-top: 7px;
       margin-bottom: 7px;
-      /* margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px; */
-
-      &:hover {
-        background-color: #7f8c8d20;
-        border-radius: 8px;
-      }
-      &:focus {
-        background-color: #313bc8 !important;
-      }
+      user-select: none;
     }
   }
 `;

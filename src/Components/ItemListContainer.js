@@ -5,7 +5,7 @@ import { getFirestore } from "../firebase";
 import { useParams } from "react-router";
 
 function ItemListContainer() {
-  const [producto, setProducto] = useState([]);
+  const [producto, setProducto] = useState();
   const [condition, setCondition] = useState("");
   const { categoryID } = useParams();
   const [llamada, setLlamada] = useState([]);
@@ -22,7 +22,6 @@ function ItemListContainer() {
       });
       setLlamada(newArray);
     };
-
     getProducts();
   }, []);
 
@@ -48,35 +47,12 @@ function ItemListContainer() {
       }
     });
     setProducto(newArray);
-    // if (categoryID === "todo") {
-    //   newArray.push(element.data());
-    // } else if (element.data().category === categoryID) {
-    //   newArray.push(element.data());
-    // }
+    console.log(producto);
   }, [categoryID, condition, llamada]);
 
   const changeCondition = (condition) => {
     setCondition(condition);
   };
-
-  // useEffect(() => {
-  //   const getCategory = async () => {
-  //     const firestore = getFirestore();
-  //     const collection = await firestore.collection("productos");
-  //     let query = await collection.get();
-
-  //     let newArray = [];
-  //     query.forEach((element) => {
-  //       if (categoryID === "todo") {
-  //         newArray.push(element.data());
-  //       } else if (element.data().category === categoryID) {
-  //         newArray.push(element.data());
-  //       }
-  //     });
-  //     setProducto(newArray);
-  //   };
-  //   getCategory();
-  // }, [categoryID]);
 
   return (
     <DivContainer>
@@ -106,6 +82,7 @@ const Title = styled.h1`
   font-size: 48px;
   margin-top: 50px;
   margin-bottom: 50px;
+  text-transform: capitalize;
   color: ${(props) => props.theme.color};
 `;
 
