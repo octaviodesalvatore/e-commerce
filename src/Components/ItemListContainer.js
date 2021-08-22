@@ -5,7 +5,7 @@ import { getFirestore } from "../firebase";
 import { useParams } from "react-router";
 
 function ItemListContainer() {
-  const [producto, setProducto] = useState();
+  const [producto, setProducto] = useState([]);
   const [condition, setCondition] = useState("");
   const { categoryID } = useParams();
   const [llamada, setLlamada] = useState([]);
@@ -47,7 +47,6 @@ function ItemListContainer() {
       }
     });
     setProducto(newArray);
-    console.log(producto);
   }, [categoryID, condition, llamada]);
 
   const changeCondition = (condition) => {

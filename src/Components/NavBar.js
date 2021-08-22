@@ -5,7 +5,6 @@ import context from "./Context";
 import User from "./User";
 import { FaMoon } from "react-icons/fa";
 import { FiSun } from "react-icons/fi";
-
 import { Link } from "react-router-dom";
 
 function NavBar({ themeToggler, theme }) {
@@ -20,11 +19,11 @@ function NavBar({ themeToggler, theme }) {
           <li>
             <Link to="/productos/todo">Productos</Link>
           </li>
-          {/* <li>
+          <li>
             <span onClick={themeToggler}>
               {theme === "light" ? <FaMoon /> : <FiSun />}
             </span>
-          </li> */}
+          </li>
           <li>
             <User />
           </li>
