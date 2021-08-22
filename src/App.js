@@ -43,7 +43,7 @@ function App() {
               <Route exact path="/Order">
                 <Order />
               </Route>
-              <Redirect to="/productos" />
+              <Redirect to="/productos/todo" />
             </Switch>
           </ThemeProvider>
         </BrowserRouter>
