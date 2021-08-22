@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { BsArrowRightShort } from "react-icons/bs";
@@ -9,6 +9,17 @@ import { GrFormClose } from "react-icons/gr";
 // es que para la entrega final, poder hacer funcionar
 // todos los demas filtros de manera conjunta.
 function AsideMenu({ changeCondition }) {
+  const [active, setActive] = useState("");
+
+  const toggleActive = (condition) => {
+    if (condition === active) {
+      setActive("");
+      changeCondition("");
+    } else {
+      setActive(condition);
+    }
+  };
+
   return (
     <StyledDiv>
       <div>
@@ -43,16 +54,48 @@ function AsideMenu({ changeCondition }) {
           <h5>Condicion del Skin</h5>
         </li>
         <li>
-          <p onClick={() => changeCondition("factory new")}>Recien fabricado</p>
+          <p
+            className={active === "factory new" ? "active" : ""}
+            onClick={() => {
+              changeCondition("factory new");
+              toggleActive("factory new");
+            }}
+          >
+            Recien fabricado
+          </p>
         </li>
         <li>
-          <p onClick={() => changeCondition("minimal wear")}>Casi nuevo</p>
+          <p
+            className={active === "minimal wear" ? "active" : ""}
+            onClick={() => {
+              changeCondition("minimal wear");
+              toggleActive("minimal wear");
+            }}
+          >
+            Casi nuevo
+          </p>
         </li>
         <li>
-          <p onClick={() => changeCondition("field tested")}>Algo desgastado</p>
+          <p
+            className={active === "field tested" ? "active" : ""}
+            onClick={() => {
+              changeCondition("field tested");
+              toggleActive("field tested");
+            }}
+          >
+            Algo desgastado
+          </p>
         </li>
         <li>
-          <p onClick={() => changeCondition("battle scarred")}>Deplorable</p>
+          <p
+            className={active === "battle scarred" ? "active" : ""}
+            onClick={() => {
+              changeCondition("battle scarred");
+              toggleActive("battle scarred");
+            }}
+          >
+            Deplorable
+          </p>
         </li>
       </ul>
     </StyledDiv>
@@ -109,6 +152,9 @@ const StyledDiv = styled.div`
         background-color: #7f8c8d20;
         border-radius: 8px;
       }
+      &:focus {
+        background-color: #313bc8 !important;
+      }
     }
   }
 `;
@@ -133,7 +179,7 @@ const MaxMinDiv = styled.div`
 
     &:focus {
       outline: none;
-      border: solid 1px #3483fa;
+      border: solid 1px #3483fa !important;
     }
   }
 

@@ -20,11 +20,11 @@ function NavBar({ themeToggler, theme }) {
           <li>
             <Link to="/productos/todo">Productos</Link>
           </li>
-          <li>
+          {/* <li>
             <span onClick={themeToggler}>
               {theme === "light" ? <FaMoon /> : <FiSun />}
             </span>
-          </li>
+          </li> */}
           <li>
             <User />
           </li>

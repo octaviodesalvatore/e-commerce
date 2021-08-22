@@ -17,3 +17,12 @@ body {
 body a {
   text-decoration: none;
 }
+
+/* .activo {
+  background-color: red;
+} */
+
+.active {
+  background-color: #7f8c8d20;
+  border-radius: 8px;
+}

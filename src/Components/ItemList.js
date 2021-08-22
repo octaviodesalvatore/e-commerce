@@ -8,7 +8,7 @@ function ItemList({ producto, changeCondition }) {
   return (
     <div>
       <StyledDiv>
-        {producto === undefined ? (
+        {producto.length === 0 ? (
           <CircularLoading style={{ color: "#000000" }} />
         ) : (
           <>
