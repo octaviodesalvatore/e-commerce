@@ -13,7 +13,7 @@ function Home() {
             Sell your CS:GO skins for real cash instantly and pay out to the
             e-wallet of your choice. Enjoy the best instant prices!
           </p>
-          <Link to="/productos/todo">
+          <Link to="/category/all">
             <GetSkinsSpan>Consigue tus skins</GetSkinsSpan>
           </Link>
         </HomeDiv>

@@ -39,7 +39,7 @@ function Item(props) {
 
         {/* <ItemCount stock={props.stock} /> */}
         <ButtonDiv>
-          <Link to={`/productos/item/${props.id}`}>
+          <Link to={`/category/item/${props.id}`}>
             <Button variant="contained">Ver producto</Button>
           </Link>
           <Button

@@ -28,16 +28,16 @@ function AsideMenu({ changeCondition }) {
             <h5>Categorías</h5>
           </li>
           <li>
-            <Link to="/productos/knife">Cuchillos</Link>
+            <Link to="/category/knife">Cuchillos</Link>
           </li>
           <li>
-            <Link to="/productos/awp">AWP</Link>
+            <Link to="/category/awp">AWP</Link>
           </li>
           <li>
-            <Link to="/productos/rifle">Rifles</Link>
+            <Link to="/category/rifle">Rifles</Link>
           </li>
           <li>
-            <Link to="/productos/pistols">Pistolas</Link>
+            <Link to="/category/pistols">Pistolas</Link>
           </li>
         </ul>
 

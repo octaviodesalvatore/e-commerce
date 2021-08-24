@@ -28,7 +28,7 @@ function ItemListContainer() {
   useEffect(() => {
     let newArray = [];
     llamada.forEach((element) => {
-      if (categoryID === "todo") {
+      if (categoryID === "all") {
         if (condition === "") {
           newArray.push(element);
         } else if (condition === element.condition) {
@@ -56,7 +56,7 @@ function ItemListContainer() {
   return (
     <DivContainer>
       <Title>
-        {categoryID === "todo" ? "Todos nuestros productos" : categoryID}
+        {categoryID === "all" ? "Todos nuestros productos" : categoryID}
       </Title>
       <StyledDiv>
         <ItemList producto={producto} changeCondition={changeCondition} />

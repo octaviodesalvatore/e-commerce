@@ -17,7 +17,7 @@ function NavBar({ themeToggler, theme }) {
         </Link>
         <List>
           <li>
-            <Link to="/productos/todo">Productos</Link>
+            <Link to="/category/all">Productos</Link>
           </li>
           <li>
             <span

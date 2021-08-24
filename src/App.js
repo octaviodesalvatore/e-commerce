@@ -49,10 +49,10 @@ function App() {
               <Route exact path="/">
                 <Home />
               </Route>
-              <Route exact path="/productos/:categoryID">
+              <Route exact path="/category/:categoryID">
                 <ItemListContainer />
               </Route>
-              <Route exact path="/productos/item/:productID">
+              <Route exact path="/category/item/:productID">
                 <ItemDetailContainer />
               </Route>
               <Route exact path="/cart">
@@ -61,7 +61,7 @@ function App() {
               <Route exact path="/Order">
                 <Order />
               </Route>
-              <Redirect to="/productos/todo" />
+              <Redirect to="/category/all" />
             </Switch>
           </ThemeProvider>
         </BrowserRouter>
