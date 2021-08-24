@@ -9,7 +9,7 @@ function ItemList({ producto, changeCondition }) {
     <div>
       <StyledDiv>
         {producto.length === 0 ? (
-          <CircularLoading style={{ color: "#000000" }} />
+          <CircularLoading />
         ) : (
           <>
             <AsideMenu changeCondition={changeCondition} />
@@ -53,4 +53,5 @@ const CircularLoading = styled(CircularProgress)`
   position: absolute;
   top: 50%;
   left: 50%;
+  color: ${(props) => props.theme.color}!important;
 `;

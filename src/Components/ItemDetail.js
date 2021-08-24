@@ -12,7 +12,6 @@ import MuiAlert from "@material-ui/lab/Alert";
 
 function ItemDetail(props) {
   const [valor, setValor] = useState(0);
-
   const { addItem } = useContext(context);
   const [open, setOpen] = React.useState(false);
 

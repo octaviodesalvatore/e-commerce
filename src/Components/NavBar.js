@@ -20,7 +20,11 @@ function NavBar({ themeToggler, theme }) {
             <Link to="/productos/todo">Productos</Link>
           </li>
           <li>
-            <span onClick={themeToggler}>
+            <span
+              onClick={() => {
+                themeToggler();
+              }}
+            >
               {theme === "light" ? <FaMoon /> : <FiSun />}
             </span>
           </li>
@@ -87,10 +91,10 @@ const List = styled.ul`
     list-style: none;
     color: #000000;
     font-size: 22px;
-    padding: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
+
     &:hover {
       background-color: #7f8c8d20;
       border-radius: 8px;
@@ -98,5 +102,9 @@ const List = styled.ul`
     &:last-child {
       font-size: 32px;
     }
+  }
+
+  li > * {
+    padding: 8px;
   }
 `;

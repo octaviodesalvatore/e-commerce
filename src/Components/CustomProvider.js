@@ -8,8 +8,6 @@ const CustomProvider = ({ children }) => {
 
   const [totalPrice, setTotalPrice] = useState(0);
 
-  // const updateCartCount = (qty) => {};
-
   useEffect(() => {
     const getTotalPrice = () => {
       let total = cartItems.reduce((accumulator, current) => {
@@ -19,10 +17,6 @@ const CustomProvider = ({ children }) => {
     };
     getTotalPrice();
   }, [cartItems]);
-
-  // useEffect(() => {
-  //   setTotalPrice(totalPrice + item.item.price * item.qty);
-  // }, [cartItems]);
 
   const cleanCart = () => {
     setCartCount(0);

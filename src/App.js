@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ItemListContainer from "./Components/ItemListContainer";
 import NavBar from "./Components/NavBar";
 import Home from "./Components/Home";
@@ -13,11 +13,30 @@ import { GlobalStytles } from "./Components/themes";
 import { lightTheme, darkTheme } from "./Components/themes";
 
 function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(window.localStorage.getItem("theme"));
 
   const themeToggler = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
   };
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  // console.log(theme);
+
+  //
+
+  // useEffect(() => {
+  //   let localTheme = localStorage.getItem("theme");
+  //   console.log(JSON.stringify(localTheme));
+  //   if (localTheme.length > 0) {
+  //     console.log("entre");
+  //     setTheme(localTheme);
+  //   } else {
+  //     setTheme("light");
+  //   }
+  // }, []);
 
   return (
     <div className="App">
@@ -26,7 +45,6 @@ function App() {
           <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
             <GlobalStytles />
             <NavBar themeToggler={themeToggler} theme={theme} />
-
             <Switch>
               <Route exact path="/">
                 <Home />
