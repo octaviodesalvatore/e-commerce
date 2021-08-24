@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import context from "./Context";
+import context from "../context";
 import styled from "styled-components";
 import Card from "@material-ui/core/Card";
 import { FaTrash } from "react-icons/fa";

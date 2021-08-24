@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import CartWidget from "./CartWidget";
-import context from "./Context";
+import context from "../context";
 import User from "./User";
 import { FaMoon } from "react-icons/fa";
 import { FiSun } from "react-icons/fi";

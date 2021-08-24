@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Button from "@material-ui/core/Button";
 import styled from "styled-components";
-import context from "./Context";
+import context from "../context";
 import { useParams } from "react-router-dom";
 
 function ItemCount({ valor, stock, setValor }) {

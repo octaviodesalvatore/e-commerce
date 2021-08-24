@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import { Link } from "react-router-dom";
-import context from "./Context";
+import context from "../context";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { MdAddShoppingCart } from "react-icons/md";

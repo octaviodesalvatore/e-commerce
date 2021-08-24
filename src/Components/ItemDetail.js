@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
-import context from "./Context";
+import context from "../context";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 

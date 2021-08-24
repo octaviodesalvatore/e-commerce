@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { RiCloseCircleLine } from "react-icons/ri";
 import styled from "styled-components";
-import context from "./Context";
+import context from "../context";
 import Button from "@material-ui/core/Button";
 
 function Confirm({ handleClose }) {

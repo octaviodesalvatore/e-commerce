@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Provider } from "./Context";
+import { Provider } from "../context";
 
 const CustomProvider = ({ children }) => {
   const [cartCount, setCartCount] = useState(0);

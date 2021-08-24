@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { getFirestore } from "../firebase";
 import styled from "styled-components";
-import context from "./Context";
+import context from "../context";
 import { useForm } from "react-hook-form";
 import { RiCloseCircleLine } from "react-icons/ri";
 
