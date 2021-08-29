@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { BsArrowRightShort } from "react-icons/bs";
-import { GrFormClose } from "react-icons/gr";
 
-//Para esta entrega esta solo funcionando el filtro de categorias
-// Que es lo que se pedia para la entrega, pero la idea
-// es que para la entrega final, poder hacer funcionar
-// todos los demas filtros de manera conjunta.
 function AsideMenu({ changeCondition }) {
   const [active, setActive] = useState("");
 
@@ -61,7 +56,7 @@ function AsideMenu({ changeCondition }) {
               toggleActive("factory new");
             }}
           >
-            Recien fabricado
+            Factory New
           </p>
         </li>
         <li>
@@ -72,7 +67,7 @@ function AsideMenu({ changeCondition }) {
               toggleActive("minimal wear");
             }}
           >
-            Casi nuevo
+            Minimal Wear
           </p>
         </li>
         <li>
@@ -83,7 +78,7 @@ function AsideMenu({ changeCondition }) {
               toggleActive("field tested");
             }}
           >
-            Algo desgastado
+            Field Tested
           </p>
         </li>
         <li>
@@ -94,7 +89,7 @@ function AsideMenu({ changeCondition }) {
               toggleActive("well worn");
             }}
           >
-            Bastante Desgastado
+            Well Worn
           </p>
         </li>
         <li>
@@ -105,7 +100,7 @@ function AsideMenu({ changeCondition }) {
               toggleActive("battle scarred");
             }}
           >
-            Deplorable
+            Battle Scarred
           </p>
         </li>
       </ul>
@@ -151,6 +146,11 @@ const StyledDiv = styled.div`
       margin-top: 7px;
       margin-bottom: 7px;
       user-select: none;
+
+      &:hover {
+        background-color: #7f8c8d20;
+        border-radius: 8px;
+      }
     }
   }
 `;
@@ -178,13 +178,4 @@ const MaxMinDiv = styled.div`
       border: solid 1px #3483fa !important;
     }
   }
-
-  /* &:nth-child() {
-    &::after {
-      content: "";
-      width: 10px;
-      height: 1px;
-      background-color: black;
-    }
-  } */
 `;

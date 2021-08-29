@@ -52,7 +52,6 @@ function Order({ handleClose, setConfirmacion, setResumen }) {
       <p>Ingrese sus datos para finalizar su compra</p>
 
       <div>
-        {/* {confirmacion && <p>Numero de orden: {confirmacion}</p>} */}
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             type="text"
@@ -134,7 +133,6 @@ const MainContainer = styled.div`
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
   input:-webkit-autofill:active {
-    /* -webkit-box-shadow: 0 0 0 30px #141414 inset !important; */
     box-shadow: 0 0 0 30px #141414 inset !important;
     -webkit-text-fill-color: white !important;
     caret-color: white;

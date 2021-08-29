@@ -20,6 +20,7 @@ function ItemList({ producto, changeCondition }) {
                     name={element.name}
                     img={element.image}
                     key={element.id}
+                    condition={element.condition}
                     price={element.price}
                     stock={element.stock}
                     id={element.id}

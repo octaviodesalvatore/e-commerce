@@ -23,21 +23,6 @@ function App() {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  // console.log(theme);
-
-  //
-
-  // useEffect(() => {
-  //   let localTheme = localStorage.getItem("theme");
-  //   console.log(JSON.stringify(localTheme));
-  //   if (localTheme.length > 0) {
-  //     console.log("entre");
-  //     setTheme(localTheme);
-  //   } else {
-  //     setTheme("light");
-  //   }
-  // }, []);
-
   return (
     <div className="App">
       <CustomProvider>

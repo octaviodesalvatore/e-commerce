@@ -8,7 +8,6 @@ import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { MdAddShoppingCart } from "react-icons/md";
 
-// import MuiAlert from "@material-ui/lab/Alert";
 function Item(props) {
   const { addItem } = useContext(context);
   const [open, setOpen] = useState(false);
@@ -29,6 +28,7 @@ function Item(props) {
     <CardDiv>
       <StyledDiv>
         <h3>{props.name}</h3>
+        <h4>({props.condition})</h4>
 
         <img src={props.img} width="300" height="200" alt={props.name} />
 
@@ -37,7 +37,6 @@ function Item(props) {
           {props.price} USD
         </p>
 
-        {/* <ItemCount stock={props.stock} /> */}
         <ButtonDiv>
           <Link to={`/category/item/${props.id}`}>
             <Button variant="contained">Ver producto</Button>
@@ -89,9 +88,13 @@ const CardDiv = styled(Card)`
 
 const StyledDiv = styled.div`
   h3 {
-    margin-bottom: 40px;
+    margin-bottom: 15px;
     color: ${(props) => props.theme.color};
     transition: all 0.5s ease;
+  }
+  h4 {
+    text-transform: capitalize;
+    color: ${(props) => props.theme.color};
   }
 
   img {

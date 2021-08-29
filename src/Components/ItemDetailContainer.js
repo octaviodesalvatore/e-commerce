@@ -34,6 +34,7 @@ function ItemDetailContainer() {
         <ItemDetail
           item={item}
           key={item.id}
+          condition={item.condition}
           name={item.name}
           price={item.price}
           image={item.image}

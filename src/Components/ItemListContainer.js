@@ -15,7 +15,6 @@ function ItemListContainer() {
       const firestore = getFirestore();
       const collection = await firestore.collection("productos");
       let query = await collection.get();
-
       let newArray = [];
       query.forEach((element) => {
         newArray.push(element.data());

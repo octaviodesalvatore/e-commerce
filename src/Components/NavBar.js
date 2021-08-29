@@ -76,7 +76,6 @@ const Nav = styled.div`
 `;
 
 const SpanBrand = styled.span`
-  /* display: block; */
   font-size: 30px;
   font-family: "Noto Sans HK", sans-serif;
   font-weight: 700;

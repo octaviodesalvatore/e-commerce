@@ -47,17 +47,6 @@ const MainContainer = styled.div`
     margin-bottom: 20px;
     max-width: 320px;
   }
-  /* Button:nth-child(1) {
-    background-color: #ffffff;
-    color: #000000;
-    padding: 8px 16px;
-  }
-
-  Button:nth-child(2) {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 8px 16px;
-  } */
 `;
 
 const SpanClose = styled.span`

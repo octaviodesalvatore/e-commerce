@@ -8,8 +8,6 @@ import context from "../context";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 
-// const [mostrar, setMostrar] = useState();
-
 function ItemDetail(props) {
   const [valor, setValor] = useState(0);
   const { addItem } = useContext(context);
@@ -41,8 +39,9 @@ function ItemDetail(props) {
 
           <CenterDiv>
             <h3>{props.name}</h3>
+            <h4>({props.condition})</h4>
             <p>
-              <b> Precio: </b> {props.price}
+              <b> Precio: </b> {props.price} USD
             </p>
 
             <p>{props.description}</p>
@@ -80,7 +79,6 @@ function ItemDetail(props) {
         open={open}
         autoHideDuration={1500}
         onClose={handleClose}
-        // message={"Producto agregado al carrito"}
       >
         <MuiAlert onClose={handleClose} severity="success">
           Producto agregado al carrito
@@ -122,7 +120,11 @@ const StyledDiv = styled.div`
   justify-content: space-between;
 
   h3 {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    color: ${(props) => props.theme.color};
+  }
+  h4 {
+    text-transform: capitalize;
     color: ${(props) => props.theme.color};
   }
 
