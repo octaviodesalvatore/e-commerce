@@ -63,7 +63,13 @@ function ItemDetail(props) {
                 >
                   Agregar al Carrito
                 </Button>
-                <Link to="/cart">
+                <Link
+                  to="/cart"
+                  onClick={() => {
+                    addItem(props.item, valor);
+                    setValor(0);
+                  }}
+                >
                   <ButtonCompra>Terminar Compra</ButtonCompra>
                 </Link>
               </>
