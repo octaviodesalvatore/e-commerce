@@ -41,7 +41,7 @@ function ItemDetail(props) {
             <h3>{props.name}</h3>
             <h4>({props.condition})</h4>
             <p>
-              <b> Precio: </b> {props.price} USD
+              <b> Price: </b> {props.price} USD
             </p>
 
             <p>{props.description}</p>
@@ -61,7 +61,7 @@ function ItemDetail(props) {
                     handleClick();
                   }}
                 >
-                  Agregar al Carrito
+                  Add to cart
                 </Button>
                 <Link
                   to="/cart"
@@ -70,7 +70,7 @@ function ItemDetail(props) {
                     setValor(0);
                   }}
                 >
-                  <ButtonCompra>Terminar Compra</ButtonCompra>
+                  <ButtonCompra>Finish buying</ButtonCompra>
                 </Link>
               </>
             )}
@@ -87,7 +87,7 @@ function ItemDetail(props) {
         onClose={handleClose}
       >
         <MuiAlert onClose={handleClose} severity="success">
-          Producto agregado al carrito
+          Product added to cart
         </MuiAlert>
       </Snackbar>
     </div>

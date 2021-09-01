@@ -14,7 +14,7 @@ function Home() {
             e-wallet of your choice. Enjoy the best instant prices!
           </p>
           <Link to="/category/all">
-            <GetSkinsSpan>Consigue tus skins</GetSkinsSpan>
+            <GetSkinsSpan>Get yours Skins</GetSkinsSpan>
           </Link>
         </HomeDiv>
         <ImgDiv></ImgDiv>

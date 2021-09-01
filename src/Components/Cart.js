@@ -46,7 +46,7 @@ function Cart() {
     <DivContainer>
       {cartItems.length > 0 ? (
         <>
-          <h1>Carrito</h1>
+          <h1>Cart</h1>
           <>
             {cartItems.length > 0 &&
               cartItems.map((item, index) => {
@@ -64,11 +64,11 @@ function Cart() {
                         />
 
                         <p>
-                          <b>Precio: </b>
+                          <b>Price: </b>
                           {item.item.price} USD
                         </p>
                         <p>
-                          <b>Cantidad: </b>
+                          <b>Quantity: </b>
                           {item.qty}
                         </p>
                         <button
@@ -91,7 +91,7 @@ function Cart() {
               {totalPrice} USD
             </p>
             <p>
-              <b>Total de productos: </b>
+              <b>Total products: </b>
               {cartCount}
             </p>
           </TotalDiv>
@@ -102,7 +102,7 @@ function Cart() {
                 setOpen2(true);
               }}
             >
-              Vaciar Carrito
+              Clean cart
             </CleanButton>
 
             <StyledBackDrop open={open2}>
@@ -114,7 +114,7 @@ function Cart() {
                 setOpen(true);
               }}
             >
-              <p>Continuar Compra</p>
+              <p>Continue Purchase</p>
             </CleanButton>
 
             <StyledBackDrop open={open}>
@@ -130,10 +130,10 @@ function Cart() {
         <>
           {confirmacion ? (
             <SuccesBuy>
-              <h1>Compra exitosa</h1>
-              <h3>Su numero de orden es: {confirmacion}</h3>
-              <p>Recuerde guardar su numero de orden</p>
-              <h2>Resumen de su compra:</h2>
+              <h1>Successful purchase</h1>
+              <h3>Your order number is: {confirmacion}</h3>
+              <p>Remember to save your order number</p>
+              <h2>Summary of your purchase:</h2>
 
               {resumen.length > 0 &&
                 resumen.map((item, index) => {
@@ -165,21 +165,21 @@ function Cart() {
                 })}
               <Link to="/category/all">
                 <ReturnButton>
-                  Regresar a productos
+                  Back to products
                   <BsArrowReturnLeft />
                 </ReturnButton>
               </Link>
             </SuccesBuy>
           ) : (
-            <>
-              <h1>Su carrito se encuentra vacio</h1>
+            <EmptyCart>
+              <h1>Your cart is empty</h1>
               <Link to="/category/all">
                 <ReturnButton>
-                  Regresar a productos
+                  Back to products
                   <BsArrowReturnLeft />
                 </ReturnButton>
               </Link>
-            </>
+            </EmptyCart>
           )}
         </>
       )}
@@ -194,7 +194,7 @@ function Cart() {
         // message={"Producto agregado al carrito"}
       >
         <MuiAlert onClose={manejarClose} severity="error">
-          Producto eliminado del carrito
+          Product removed from cart
         </MuiAlert>
       </Snackbar>
     </DivContainer>
@@ -209,6 +209,11 @@ const StyledBackDrop = styled(Backdrop)`
 
 const SuccesBuy = styled.div`
   text-align: center;
+  a {
+    display: inline-block;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
 
   h3 {
     font-size: 24px;
@@ -323,10 +328,7 @@ const ReturnButton = styled.button`
   transition: all 0.5s ease;
   padding: 8px 16px;
   border-radius: 4px;
-  margin: 0 auto;
   cursor: pointer;
-  display: block;
-  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -351,7 +353,7 @@ const TotalDiv = styled.div`
     display: inline;
     margin-right: 10px;
     font-size: 18px;
-    color: ${(props) => props.theme.button};
+    color: ${(props) => props.theme.color};
     transition: all 0.5s ease;
   }
 `;
@@ -361,4 +363,11 @@ const ButtonContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 40px;
+`;
+
+const EmptyCart = styled.div`
+  text-align: center;
+  a {
+    display: inline-block;
+  }
 `;

@@ -49,27 +49,27 @@ function Order({ handleClose, setConfirmacion, setResumen }) {
         <RiCloseCircleLine size={30} fill={"#000"} />
       </span>
 
-      <p>Ingrese sus datos para finalizar su compra</p>
+      <p>Enter your information to finalize your purchase</p>
 
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             type="text"
-            placeholder="Nombre Completo"
+            placeholder="Full name"
             autoComplete="Full Name"
             {...register("Name", { required: true, maxLength: 80 })}
           />
-          {errors.Name && "Nombre es requerido"}
+          {errors.Name && "Name is required"}
           <input
             type="text"
             placeholder="Email"
             autoComplete="Email"
             {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
           />
-          {errors.Email && "Emeail requerido"}
+          {errors.Email && "Email required"}
           <input
             type="tel"
-            placeholder="Mobile number"
+            placeholder="Phone number"
             autoComplete="Tel"
             {...register("Mobile", {
               required: true,
@@ -77,7 +77,7 @@ function Order({ handleClose, setConfirmacion, setResumen }) {
               maxLength: 12,
             })}
           />
-          {errors.Mobile && "Telefono es requerido"}
+          {errors.Mobile && "Phone is required"}
 
           <input type="submit" />
         </form>

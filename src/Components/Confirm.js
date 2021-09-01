@@ -11,10 +11,10 @@ function Confirm({ handleClose }) {
       <SpanClose onClick={handleClose}>
         <RiCloseCircleLine size={30} fill={"#000000"} />
       </SpanClose>
-      <p>Estas seguro que quieres eliminar tu carrito</p>
+      <p>Are you sure you want to delete your cart?</p>
       <ButtonContainer>
         <Button variant="outlined" color="primary" onClick={cleanCart}>
-          Si
+          Yes
         </Button>
         <Button variant="outlined" color="secondary" onClick={handleClose}>
           No

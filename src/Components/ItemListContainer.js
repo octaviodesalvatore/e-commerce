@@ -54,9 +54,7 @@ function ItemListContainer() {
 
   return (
     <DivContainer>
-      <Title>
-        {categoryID === "all" ? "Todos nuestros productos" : categoryID}
-      </Title>
+      <Title>{categoryID === "all" ? "All Our Products" : categoryID}</Title>
       <StyledDiv>
         <ItemList producto={producto} changeCondition={changeCondition} />
       </StyledDiv>

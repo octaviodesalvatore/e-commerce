@@ -33,13 +33,13 @@ function Item(props) {
         <img src={props.img} width="300" height="200" alt={props.name} />
 
         <p>
-          <b>Precio: </b>
+          <b>Price: </b>
           {props.price} USD
         </p>
 
         <ButtonDiv>
           <Link to={`/category/item/${props.id}`}>
-            <Button variant="contained">Ver producto</Button>
+            <Button variant="contained">See Product</Button>
           </Link>
           <Button
             variant="contained"
@@ -89,7 +89,7 @@ const CardDiv = styled(Card)`
 const StyledDiv = styled.div`
   h3 {
     margin-bottom: 15px;
-    color: ${(props) => props.theme.color};
+    color: ${(props) => props.theme.weaponName};
     transition: all 0.5s ease;
   }
   h4 {

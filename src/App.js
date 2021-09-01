@@ -9,8 +9,8 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import CustomProvider from "./Components/CustomProvider";
 
-import { GlobalStytles } from "./Components/themes";
-import { lightTheme, darkTheme } from "./Components/themes";
+import { GlobalStytles } from "./themes";
+import { lightTheme, darkTheme } from "./themes";
 
 function App() {
   const [theme, setTheme] = useState(window.localStorage.getItem("theme"));

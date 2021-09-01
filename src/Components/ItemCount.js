@@ -16,7 +16,7 @@ function ItemCount({ valor, stock, setValor }) {
   return (
     <div>
       <p>
-        <b>Stock disponible: </b>
+        <b>Available stock: </b>
         {stock - valor - getQty()}
       </p>
       <StyledDiv>
