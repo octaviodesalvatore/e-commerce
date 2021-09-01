@@ -6,14 +6,28 @@ Este proyecto es un Ecommerce de skins sobre el videojuego CS:GO realizado en re
 
 ## Dependecias utilizadas
 
-### `Styled Components`
+- [Styled Components](https://styled-components.com/)
 
-### `Material UI`
+- [Material UI](https://material-ui.com/)
 
-### `React Icons`
+- [React Icons](https://react-icons.github.io/react-icons/)
 
-### `React Router DOM`
+- [React Router DOM](https://reactrouter.com/web/guides/quick-start)
 
-### `Firebase`
+- [Firebase](https://firebase.google.com/)
 
-### `React Hook Form`
+- [React Hook Form](https://react-hook-form.com/)
+
+## Deploy
+
+https://skinhub.vercel.app/
+
+## Screenshots
+
+![Home page, Light Theme](https://i.imgur.com/Wk1yqfR.png)
+
+![Home page, Dark Theme](https://i.imgur.com/myPQNFI.png)
+
+![All Products](https://i.imgur.com/B5pqzpy.png)
+
+![Cart](https://i.imgur.com/xon2enm.png)

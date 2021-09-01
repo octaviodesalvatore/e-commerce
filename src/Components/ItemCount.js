@@ -54,6 +54,7 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 250ms ease-in-out all;
 
   p {
     padding: 15px 15px;
@@ -64,9 +65,11 @@ const StyledDiv = styled.div`
     color: #ffffff;
     color: "white";
     font-size: 18px;
+    transition: 250ms ease-in-out all;
   }
   Button:nth-child(1) {
     background-color: #ffffff;
     color: #000000;
+    transition: 250ms ease-in-out all;
   }
 `;
