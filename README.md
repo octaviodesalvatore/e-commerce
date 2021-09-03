@@ -8,11 +8,11 @@ Este proyecto es un Ecommerce de skins sobre el videojuego CS:GO realizado en re
 
 Una vez clonado o descargado el proyecto, instalar dependencias:
 
-### npm install
+### `npm install`
 
 Correr el servidor:
 
-### npm start
+### `npm start`
 
 Se abre una pestaña del navegador en el puerto 3000
 
