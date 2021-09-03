@@ -14,12 +14,10 @@ function ItemDetailContainer() {
     const getCategory = async () => {
       const firestore = getFirestore();
       const collection = await firestore.collection("productos");
-      let query = await collection.get();
+      let query = await collection.where("id", "==", productID);
 
-      query.forEach((element) => {
-        if (element.data().id === productID) {
-          setItem(element.data());
-        }
+      query.get().then((querySnapshot) => {
+        setItem(querySnapshot.docs[0].data());
       });
     };
 

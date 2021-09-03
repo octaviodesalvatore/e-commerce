@@ -39,7 +39,7 @@ function Order({ handleClose, setConfirmacion, setResumen }) {
         cleanCart();
       })
       .catch((error) => {
-        console.log(error);
+        alert(error, "Intente otra vez");
       });
   };
 

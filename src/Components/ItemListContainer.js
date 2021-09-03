@@ -8,45 +8,35 @@ function ItemListContainer() {
   const [producto, setProducto] = useState([]);
   const [condition, setCondition] = useState("");
   const { categoryID } = useParams();
-  const [llamada, setLlamada] = useState([]);
 
   useEffect(() => {
     const getProducts = async () => {
       const firestore = getFirestore();
       const collection = await firestore.collection("productos");
-      let query = await collection.get();
-      let newArray = [];
-      query.forEach((element) => {
-        newArray.push(element.data());
+      let query;
+      if (categoryID === "all" && condition === "") {
+        query = await collection.where("category", "!=", "all");
+      }
+      if (categoryID === "all" && condition !== "") {
+        query = await collection.where("condition", "==", condition);
+      }
+      if (categoryID !== "all" && condition === "") {
+        query = await collection.where("category", "==", categoryID);
+      }
+      if (categoryID !== "all" && condition !== "") {
+        query = await collection
+          .where("category", "==", categoryID)
+          .where("condition", "==", condition);
+      }
+
+      query.get().then((querySnapshot) => {
+        if (querySnapshot.size !== 0) {
+          setProducto(querySnapshot.docs.map((doc) => doc.data()));
+        }
       });
-      setLlamada(newArray);
     };
     getProducts();
-  }, []);
-
-  useEffect(() => {
-    let newArray = [];
-    llamada.forEach((element) => {
-      if (categoryID === "all") {
-        if (condition === "") {
-          newArray.push(element);
-        } else if (condition === element.condition) {
-          newArray.push(element);
-        }
-      } else {
-        if (element.category === categoryID && condition === "") {
-          newArray.push(element);
-        }
-        if (
-          element.category === categoryID &&
-          condition === element.condition
-        ) {
-          newArray.push(element);
-        }
-      }
-    });
-    setProducto(newArray);
-  }, [categoryID, condition, llamada]);
+  }, [categoryID, condition]);
 
   const changeCondition = (condition) => {
     setCondition(condition);
